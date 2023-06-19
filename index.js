@@ -3,18 +3,21 @@ let employee = {
     name: "Grace Hopper",
     streetAddress: "AGH1234"
 }
+// function updateEmployeeWithKeyAndValue(employee, key, value) {
+//   let newEmployee = { ...employee };
+//   newEmployee = { ...newEmployee, [key]: value }; 
+//   return newEmployee // Return the newEmployee object
+// }
+// let updatedEmployee = updateEmployeeWithKeyAndValue(employee, 'streetAddress', 'Tom Mboya');
+// console.log(updatedEmployee);
+// OR
 function updateEmployeeWithKeyAndValue(employee, key, value) {
-    // Create a new object to clone the original employee object
-    let newEmployee = Object.assign({}, employee);
-  
-    // Update the newEmployee object with the new key-value pair
-    newEmployee[key] = value;
-  
-    // Return the newEmployee object
-    return newEmployee;
-  }
-  let updatedEmployee = updateEmployeeWithKeyAndValue(employee, 'streetAddress', 'Tom Mboya');
-  console.log(updatedEmployee);
+  let newEmployee = Object.assign({}, employee);// Create a new object to clone the original employee object
+  newEmployee[key] = value;
+  return newEmployee;
+}
+let updatedEmployee = updateEmployeeWithKeyAndValue(employee, 'streetAddress', 'Tom Mboya');
+console.log(updatedEmployee);
 
   function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value)  {
     employee[key] = value;
